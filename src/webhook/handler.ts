@@ -1,7 +1,9 @@
 export async function handleWebhook(request: Request): Promise<Response> {
   if (request.method !== "POST") {
+    console.debug("Invalid request method:", request.method);
     return new Response("Method Not Allowed", { status: 405 });
   }
+  console.debug("Processing webhook request");
   const body = await request.json();
   console.debug("Webhook payload received:", body.toString().substring(0, 200));
   // Extract message data from the incoming webhook
