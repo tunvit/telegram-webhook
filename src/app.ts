@@ -8,12 +8,8 @@ Deno.serve({ port: PORT }, async (request) => {
   const { pathname } = new URL(request.url);
   console.log(`Received request: ${request.method} ${pathname}`);
   if (request.method === "POST" && pathname === "/webhook") {
-    console.log("Handling webhook request", request);
     try {
-      console.debug("Parsing request body");
-      const body = await request.json();
-      console.debug("Request body parsed", body);
-      await handleWebhook(body);
+      await handleWebhook(request);
     } catch (e) {
       console.error(`Error handling webhook`, e);
     }
