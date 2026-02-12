@@ -14,9 +14,6 @@
       "desc": "Run the application"
     }
   },
-  "imports": {
-    "server": "https://deno.land/std@0.224.0/http/server.ts"
-  },
   "fmt": {
     "options": {
       "lineWidth": 80
