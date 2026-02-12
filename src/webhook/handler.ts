@@ -1,7 +1,7 @@
 export async function handleWebhook(request: Request): Promise<Response> {
   console.debug("Processing webhook request");
   const body = await request.json();
-  console.debug("Webhook payload received:", body.toString().substring(0, 200));
+  console.debug("Webhook payload received:", JSON.stringify(body).substring(0, 200));
   // Extract message data from the incoming webhook
   const message = body.message;
   console.debug("Extracted message:", message);
