@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "deno.ns",
+      "deno.window"
+    ],
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "tasks": {
+    "test": "deno test --allow-net --allow-env src/app.ts",
+    "start": {
+      "command": "run --allow-net --allow-env src/app.ts",
+      "desc": "Run the application"
+    }
+  },
+  "imports": {
+    "server": "https://deno.land/std@0.224.0/http/server.ts"
+  },
+  "fmt": {
+    "options": {
+      "lineWidth": 80
+    }
+  },
+  "lint": {
+    "files": {
+      "include": [
+        "src/**/*.ts"
+      ],
+      "exclude": [
+        "**/*.test.ts"
+      ]
+    }
+  }
+}
